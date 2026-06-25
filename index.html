@@ -60,7 +60,82 @@ width:100%;
 border-collapse:collapse;
 margin-top:10px;
 }
+</table>
 
+</div>
+
+<div class="card">
+
+<h2>🎯 Sugestão de Bet</h2>
+
+<h1 id="bet">R$ 0,40</h1>
+
+<h3 id="status">🔥 ENTRAR AGORA</h3>
+
+<h3 id="chance">Chance: ALTA</h3>
+
+</div>
+
+</div>
+
+<footer>
+© Eduardo Slots
+</footer>
+
+<script>
+
+const jogos=[
+"Touro Sortudo",
+"Fortune Tiger",
+"Fortune Rabbit",
+"Fortune Ox",
+"Dragon Hatch",
+"Fortune Mouse",
+"Fortune Snake",
+"Wild Bandito",
+"Lucky Neko",
+"Mahjong Ways 2",
+"Speed Winner",
+"Cash Mania"
+];
+
+const bets=["R$ 0,40","R$ 0,60","R$ 0,80","R$ 1,00","R$ 2,00"];
+const status=["🔥 ENTRAR AGORA","⏳ AGUARDE","✅ LIBERADO"];
+const chance=["ALTA","MÉDIA","BAIXA"];
+
+function horario(){
+const h=Math.floor(Math.random()*24);
+const m=Math.floor(Math.random()*60);
+return String(h).padStart(2,"0")+":"+String(m).padStart(2,"0");
+}
+
+function atualizar(){
+
+document.getElementById("bet").innerHTML=
+bets[Math.floor(Math.random()*bets.length)];
+
+document.getElementById("status").innerHTML=
+status[Math.floor(Math.random()*status.length)];
+
+document.getElementById("chance").innerHTML=
+"Chance: "+chance[Math.floor(Math.random()*chance.length)];
+
+const linhas=document.querySelectorAll("table tr");
+
+for(let i=1;i<linhas.length;i++){
+linhas[i].cells[1].innerHTML=horario();
+}
+
+}
+
+atualizar();
+
+setInterval(atualizar,600000);
+
+</script>
+
+</body>
+</html>
 th{
 background:#00bfff;
 color:#000;
